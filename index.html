@@ -1,7 +1,4 @@
-
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,25 +8,34 @@
 	<link rel="icon" href="img/icon.png" type="img/icon">
 	<link rel="shortcut icon" href="" type="img/icon">
 </head>
+
 <body>
+
     <div class="PRO">
         <a href="https://www.netflix.com/ru/" target="_blank">NETFLIX</a>
         <span class="right">
         <a href="https://www.netflix.com/ru/">
             </a>
         </span>
-    <div class="clr"></div>
+        <div class="clr"></div>
     </div>
     <div id="login">
         <form action="javascript:void(0);" method="get">
             <fieldset class="clearfix">
-                <p><span class="fontawesome-user"></span><input type="text" value="Логин" onBlur="if(this.value == '') this.value = 'Логин'" onFocus="if(this.value == 'Логин') this.value = ''" required></p> <!-- JS because of IE support; better: placeholder="Username" -->
+                <p><span class="fontawesome-user"></span><input type="text" value="Логин" onBlur="if(this.value == '') this.value = 'Логин'" onFocus="if(this.value == 'Логин') this.value = ''" required></p> <!-- JS because of IE support; better: placeholder="Username" -->                
                 <p><span class="fontawesome-lock"></span><input type="password"  value="Пароль" onBlur="if(this.value == '') this.value = 'Пароль'" onFocus="if(this.value == 'Пароль') this.value = ''" required></p> <!-- JS because of IE support; better: placeholder="Password" -->
-                <p><input type="submit" value="ВОЙТИ"></p>
+                <div align="center">
+                <form>
+                      <input type="button" value="Войти" onClick="Input()">
+                </form>
+                </div>
             </fieldset>
         </form>
         <p>Нет аккаунта? &nbsp;&nbsp;<a href="#">Регистрация</a><span class="fontawesome-arrow-right"></span></p>
     </div>
+    
+</body>
+
 
 <footer id="footer" class="footer-1">
 <div class="main-footer widgets-dark typo-light">
@@ -89,3 +95,23 @@
 </div>
 </div>
 </footer>
+
+<script language="JavaScript" type="text/javascript">
+function Input(){
+login_ok = false;
+user_name = "";
+password = "";
+user_name = prompt("Логин","");
+user_name = user_name.toLowerCase();
+password = prompt("Пароль","");
+password = password.toLowerCase();
+if (user_name=="netflix" && password=="12345") {
+login_ok=true;
+window.location="index.htm";
+}
+if (user_name=="user1" && password=="54321") {
+login_ok=true;
+window.location=" https://www.netflix.com/ru/";
+}if (login_ok==false) { alert("Неверный логин или пароль!"); }
+}
+</script>

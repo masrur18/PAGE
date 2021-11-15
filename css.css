@@ -76,21 +76,21 @@ p {
 	color:#fff;
 }
 
-#login form input[type="submit"] {
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-	background-color: #ea4c88;
+#login form input[type="button"] {
+	border-radius: 50px;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	background-color: red;
 	color: #eee;
 	font-weight: bold;
 	margin-bottom: 2em;
 	text-transform: uppercase;
 	cursor:pointer;
-	width: 280px;
+	width: 150px;
 }
 
-#login form input[type="submit"]:hover {
-	background-color: #d44179;
+#login form input[type="button"]:hover {
+	background-color: black;
 }
 
 #login > p {
@@ -212,5 +212,3 @@ box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 -ms-transition: all 250ms ease-in-out 0s;
 -o-transition: all 250ms ease-in-out 0s;
 transition: all 250ms ease-in-out 0s;
-
-}
