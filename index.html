@@ -22,11 +22,11 @@
     <div id="login">
         <form action="javascript:void(0);" method="get">
             <fieldset class="clearfix">
-                <p><span class="fontawesome-user"></span><input type="text" value="Логин" onBlur="if(this.value == '') this.value = 'Логин'" onFocus="if(this.value == 'Логин') this.value = ''" required></p> <!-- JS because of IE support; better: placeholder="Username" -->                
-                <p><span class="fontawesome-lock"></span><input type="password"  value="Пароль" onBlur="if(this.value == '') this.value = 'Пароль'" onFocus="if(this.value == 'Пароль') this.value = ''" required></p> <!-- JS because of IE support; better: placeholder="Password" -->
+                <p><span class="fontawesome-user"></span><input id="lg" type="text" value="Логин" onBlur="if(this.value == '') this.value = 'Логин'" onFocus="if(this.value == 'Логин') this.value = ''" required></p> <!-- JS because of IE support; better: placeholder="Username" -->                
+                <p><span class="fontawesome-lock"></span><input id="ps" type="password"  value="Пароль" onBlur="if(this.value == '') this.value = 'Пароль'" onFocus="if(this.value == 'Пароль') this.value = ''" required></p> <!-- JS because of IE support; better: placeholder="Password" -->
                 <div align="center">
                 <form>
-                      <input type="button" value="Войти" onClick="Input()">
+                      <input id="btn" type="button" value="Войти" onClick="Input()">
                 </form>
                 </div>
             </fieldset>
@@ -97,21 +97,13 @@
 </footer>
 
 <script language="JavaScript" type="text/javascript">
-function Input(){
-login_ok = false;
-user_name = "";
-password = "";
-user_name = prompt("Логин","");
-user_name = user_name.toLowerCase();
-password = prompt("Пароль","");
-password = password.toLowerCase();
-if (user_name=="netflix" && password=="12345") {
-login_ok=true;
-window.location="index.htm";
-}
-if (user_name=="user1" && password=="54321") {
-login_ok=true;
-window.location=" https://www.netflix.com/ru/";
-}if (login_ok==false) { alert("Неверный логин или пароль!"); }
+document.getElementById('btn').onclick = function() {
+   var login = document.getElementById('lg').value;
+   var password = document.getElementById('ps').value;
+   if(login === 'admin' && password === '12345') {
+      window.location="index.htm";
+   } else {
+      alert('Неверный логин или пароль!');
+   }
 }
 </script>
